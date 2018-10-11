@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PTO V3</title>
     <style>
-        #output {
+         #output span {
             color: red;
             font-size: 21px;
         }
@@ -19,11 +19,11 @@
         <p>How many weeks have you worked this year?</p>
         <input type="text" id="weeksWorked">
         <p>What PTO have you already taken this year?</p>
-        <input type="text" id="hrsToDate">
+        <input type="text" id="ptoDays">
         <select id="result">
-            <option value="0">hours</option>
-            <option value="8">days</option>
-            <option value="40">weeks</option>
+            <option value="hours">hours</option>
+            <option value="days">days</option>
+            <option value="weeks">weeks</option>
         </select>
         <input type="submit" value="submit">
     </form>
@@ -33,37 +33,37 @@
             event.preventDefault();
 
             var output = document.getElementById('output');
-            var yearsWorked = parseInt(document.getElementById('yearWorked').value);
+            var yearsWorked = parseInt(document.getElementById('yearsWorked').value);
             var weeksWorked = parseInt(document.getElementById('weeksWorked').value);
-            var hrsWorked = parseInt(document.getElementById('hrsWorked').value);
+            var result = document.getElementById('result').value;
+            var ptoDays = parseInt(document.getElementById('ptoDays').value);
             var hrsPerPaycheck;
 
             if (yearsWorked < 5) {
                 hrsPerPaycheck = 5;
-            };
+            }
             
             if (yearsWorked >= 5) {
                 hrsPerPaycheck = 6;
-            };
+            }
 
             if (yearsWorked >= 10) {
                 hrsPerPaycheck = 7;
-            };
+            }
+            var hrsToDate = (hrsPerPaycheck * weeksWorked) / 2;
+            var hrsToDate = hrsToDate - ptoDays;
 
-            var totalNumCheck = weeksWorked / 2;
-            var hrsToDate = totalNumCheck * hrsPerPaycheck;
-            var hrsToDate = hrsToDate - hrsWorked;
-
-            if (result === 0) {
+            if (result == "hours") {
                 hrsToDate = hrsToDate / 1;
             }
-            if (result === 8) {
+            if (result == "days") {
                 hrsToDate = hrsToDate / 8;
             }
-            if (result === 40) {
+            if (result == "weeks") {
                 hrsToDate = hrsToDate / 40;
             }
-
+            
+            output.innerHTML = "Here is whats left of your PTO <span>" + hrsToDate + "</span> " + result + "."; 
         }
     </script>
 </body>

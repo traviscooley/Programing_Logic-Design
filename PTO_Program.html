@@ -59,15 +59,15 @@ PTO for 1 yr in weeks -->
     <p>STEPS</p>
     <ol>
         <li>START</li>
-        <li>SET yearsWorked</li>
-        <li>SET weeksWorked</li>
-        <li>SET hrsToDate</li>
         <li>DISPLAY "How many years have you worked"</li>
         <li>INPUT yearsWorked</li>
         <li>DISPLAY "How many weeks have you worked this year"</li>
         <li>INPUT weeksWorked</li>
         <li>DISPLAY "What PTO have you already taken this year"</li>
         <li>INPUT hrsToDate</li>
+        <li>if yearsWorked less than 5 hrsPerPayCheck = 5</li>
+        <li>if yearsWorked equal to or greater than 5 hrsPerPayCheck = 6</li>
+        <li>if yearsWorked equal to or greater than 10 hrsPerPayCheck = 7</li>
         <li>SET input(yearsWorked) = hrsPerPaycheck</li>
         <li>SET input(weeksWorked) / 2 = totalnumchecks</li>
         <li>SET totalnumchecks * hrsPerPaycheck = hrsToDate</li>
