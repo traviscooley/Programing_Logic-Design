@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PTO V3</title>
+    <style>
+        #output {
+            color: red;
+            font-size: 21px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" onsubmit="ptoV3();">
+        <p>How many years you worked?</p>
+        <input type="text" id="yearsWorked">
+        <p>How many weeks have you worked this year?</p>
+        <input type="text" id="weeksWorked">
+        <p>What PTO have you already taken this year?</p>
+        <input type="text" id="hrsToDate">
+        <select id="result">
+            <option value="0">hours</option>
+            <option value="8">days</option>
+            <option value="40">weeks</option>
+        </select>
+        <input type="submit" value="submit">
+    </form>
+    <p id="output">&nbsp;</p>
+    <script>
+        function ptoV3() {
+            event.preventDefault();
+
+            var output = document.getElementById('output');
+            var yearsWorked = parseInt(document.getElementById('yearWorked').value);
+            var weeksWorked = parseInt(document.getElementById('weeksWorked').value);
+            var hrsWorked = parseInt(document.getElementById('hrsWorked').value);
+            var hrsPerPaycheck;
+
+            if (yearsWorked < 5) {
+                hrsPerPaycheck = 5;
+            };
+            
+            if (yearsWorked >= 5) {
+                hrsPerPaycheck = 6;
+            };
+
+            if (yearsWorked >= 10) {
+                hrsPerPaycheck = 7;
+            };
+
+            var totalNumCheck = weeksWorked / 2;
+            var hrsToDate = totalNumCheck * hrsPerPaycheck;
+            var hrsToDate = hrsToDate - hrsWorked;
+
+            if (result === 0) {
+                hrsToDate = hrsToDate / 1;
+            }
+            if (result === 8) {
+                hrsToDate = hrsToDate / 8;
+            }
+            if (result === 40) {
+                hrsToDate = hrsToDate / 40;
+            }
+
+        }
+    </script>
+</body>
+</html>

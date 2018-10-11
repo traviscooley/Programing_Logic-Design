@@ -1,0 +1,39 @@
+<!-- V1
+5hrs per paycheck
+Bi-weekly
+PTO for 1yr -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PTO V1</title>
+    <style>
+        #output {
+            color: red;
+            font-size: 21px;
+        }
+    </style>
+</head>
+<body>
+    <p>You earn <span id="output"></span></p>
+    <script>
+        // Get the element we will fill with the answer
+        var output = document.getElementById('output');
+
+        // Set how many paychecks we get a year
+        var paychecksPerYear = 26;
+
+        // Set the rate at which we earn hours/paycheck
+        var hrsPerPaycheck = 5;
+
+        // Calculate the total number of hours earn in a year
+        var totalHrsPerYr = hrsPerPaycheck * paychecksPerYear;
+
+        // Output the total to the html element we specified
+        output.innerHTML = totalHrsPerYr;
+    </script>
+</body>
+</html>

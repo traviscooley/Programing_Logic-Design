@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>NET Pay Program</title>
+        <style>
+            #output {
+                color: red;
+                font-size: 21px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>NET Pay Program</h1>
+        <p>This program is a simply NET pay calculator. It takes your GROSS Pay and the dedecuts Federal, State, FICA. It has the option to deduct any additional amount from check. Then it displays your NET pay.</p>
+        <!-- FED 15% -->
+        <!-- STATE 5% -->
+        <!-- FICA 7.62% -->
+        <!-- IF ANY ADDITIONAL -->
+        <ol>
+            <li>START</li>
+            <li>DELARATIONS:
+                <ul>
+                    <li>FED = grossPay * .15</li>
+                    <li>STATE = grossPay * .05</li>
+                    <li>FICA = grossPay * .0762</li>
+                    <li>additionalDeduction = 0</li>
+                    <li>netPay = 0</li>
+                </ul>
+            </li>
+            <li>DISPLAY "Enter in your grossPay here"</li>
+            <li>INPUT grossPay</li>
+            <li>DISPLAY "We will deduct Federal, State, and FICA taxes from your NET pay."</li>
+            <li>netPay = grossPay - (FED + STATE + FICA)</li>
+            <li>DISPLAY "Would you like to make any additional deductions? yes/no"</li>
+            <li>INPUT ans</li>
+            <li>PROCESS if ans === true/yes
+                <ol>
+                    <li>DISPLAY "Enter additional amount"</li>
+                    <li>INPUT additionalDeduction</li>
+                    <li>PROCESS netPay = netPay - additionalDeduction</li>
+                </ol>
+            </li>
+            <li>DISPLAY "Here is your NET Pay 'netPay'."</li>
+            <li>END</li>
+        </ol>
+        <hr>
+        <p>Enter your GROSS Pay here and submit</p>
+        <form action="#output" onsubmit="calculateNetPay()">
+            <input type="text" id="grossPay" value="0">
+            <p>Add any additional deductables here.</p>
+            <input type="text" id="additionalDeduction" value="0">
+            <input type="submit" value="submit">
+        </form>
+        <p>Here is your NET Pay:</p>
+        <span id="output"><script src="js/calc_net.js"></script></span>
+    </body>
+
+</html>

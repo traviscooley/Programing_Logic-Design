@@ -1,0 +1,57 @@
+<!-- V2
+1-4yrs = 5hrs
+equal to or greater than 5yrs = 6hrs
+equal to or greater than 10yrs = 7hrs
+PTO for 1 yr in weeks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PTO V2</title>
+    <style>
+        #output span {
+            color: red;
+            font-size: 21px;
+        }
+    </style>
+</head>
+<body>
+    <p>Enter how many years you worked.</p>
+    <form action="#output" onsubmit="ptoV2();">
+        <input type="text" id="yearsWorked">
+        <input type="submit" value="submit">
+    </form>
+    <p id="output">&nbsp;</p>
+    <!-- <p>You get <span id="output"></span> weeks of PTO off.</p> -->
+    <script>
+        function ptoV2() {
+            event.preventDefault();
+
+            var output = document.getElementById('output');
+            var yearsWorked = parseInt(document.getElementById('yearsWorked').value);
+            var hours = 0;
+            var paycheckPerYear = 26;
+
+            if (yearsWorked < 5) {
+                hours = 5;
+            };
+            
+            if (yearsWorked >= 5) {
+                hours = 6;
+            };
+
+            if (yearsWorked >= 10) {
+                hours = 7;
+            };
+
+            var totalHrsPerYear = hours * paycheckPerYear;
+            var weeks = totalHrsPerYear / 40;
+            //output.innerHTML = weeks;
+            output.innerHTML = "You get <span>" + weeks + "</span> weeks of PTO off.";
+        };
+    </script>
+</body>
+</html>

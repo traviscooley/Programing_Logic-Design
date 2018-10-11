@@ -1,0 +1,78 @@
+<!-- PTO (Paid Time Off) Program
+
+V1
+5hrs per paycheck
+Bi-weekly
+PTO for 1yr
+
+-------------------
+
+V2
+1-4yrs = 5hrs
+equal to or greater than 5yrs = 6hrs
+equal to or greater than 10yrs = 7hrs
+PTO for 1 yr in weeks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PTO Program</title>
+</head>
+<body>
+    <h1>PTO Program</h1>
+    <h2>PTO V1.0</h2>
+    <p>A simple program that calculates the PTO(Paid time off) for 1yr at a fixed rate of 5hrs per paycheck paid bi-weekly.</p>
+    <p>STEPS</p>
+    <ol>
+        <li>Start</li>
+        <li>SET INT paycheckPerYear</li>
+        <li>SET INT hrsPerPayCheck</li>
+        <li>Display "This is a simple program that outputs how many hrs you earn a year for PTO(Paid Time Off)."</li>
+        <li>SET INT totalHrsPerYr = hrsPerPaycheck * paycheckPerYear</li>
+        <li>Display "You earn totalHrsPerYr hours per year"</li>
+        <li>End</li>
+    </ol>
+    <br>
+    <h2>PTO V2.0</h2>
+    <p>A simple program that calculates the PTO(Paid time off) for the corresponding amount of time the employee has work in years. Returns amoun of PTO in weeks.</p>
+    <p>STEPS</p>
+    <ol>
+        <li>Start</li>
+        <li>SET INT hrsPerPaycheck</li>
+        <li>SET INT paycheckPerYear = 26</li>
+        <li>Display "How many years have you worked"</li>
+        <li>INPUT yearsWorked</li>
+        <li>if yearsWorked less than 5 hrsPerPayCheck = 5</li>
+        <li>if yearsWorked equal to or greater than 5 hrsPerPayCheck = 6</li>
+        <li>if yearsWorked equal to or greater than 10 hrsPerPayCheck = 7</li>
+        <li>SET INT  totalHrsPerYr = hrsPerPayCheck * paycheckPerYear</li>
+        <li>SET REAL weeks = totalHrsPerYr/40</li>
+        <li>Display "You get 'weeks' weeks off a year"</li>
+        <li>End</li>
+    </ol>
+    <br>
+    <h2>PTO V3.0</h2>
+    <p>A simple PTO(Paid time off) calculator that uses how many years you have worked to get correct PTO rate. Then uses how many weeks you have worked so far this year to calculate total PTO to date. Then deducts any PTO that you have taken to date. Results can be returned in hours or days or weeks.</p>
+    <p>STEPS</p>
+    <ol>
+        <li>START</li>
+        <li>SET yearsWorked</li>
+        <li>SET weeksWorked</li>
+        <li>SET hrsToDate</li>
+        <li>DISPLAY "How many years have you worked"</li>
+        <li>INPUT yearsWorked</li>
+        <li>DISPLAY "How many weeks have you worked this year"</li>
+        <li>INPUT weeksWorked</li>
+        <li>DISPLAY "What PTO have you already taken this year"</li>
+        <li>INPUT hrsToDate</li>
+        <li>SET input(yearsWorked) = hrsPerPaycheck</li>
+        <li>SET input(weeksWorked) / 2 = totalnumchecks</li>
+        <li>SET totalnumchecks * hrsPerPaycheck = hrsToDate</li>
+
+        <li>END</li>
+    </ol>
+</body>
+</html>
