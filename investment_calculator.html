@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Investment Calculator</title>
     <style>
-
+         #output span {
+            color: red;
+            font-size: 21px;
+        }
     </style>
 </head>
 <body>
@@ -14,9 +17,63 @@
     <p>A simple investment calculator that takes an initial investment amount in dollars. Then accepts an interest rate between 2-7%. Then takes an additional amount of money for each term of the investment. Enter a investment term(ie. how long). Then specify that the term will be in years or months. Result will be your total interest earned and the total amount in your account.</p>
     <ol>
         <li>START</li>
+        <li>DISPLAY "Enter in your initial investment amount"</li>
+        <li>INPUT inInvestment</li>
+        <li>SELECT "2-7%"</li>
+        <li>DISPLAY "Enter in your additional amount for the investment term"</li>
+        <li>INPUT additional</li>
+        <li>DISPLAY "Enter in how long your investment term is"</li>
+        <li>INPUT investment term</li>
+        <li>SELECT "investment term"</li>
+        <li>DISPLAY "total interest + total amount + additional"</li>
         <li>END</li>
     </ol>
     <hr>
-    <p></p>
+    <form action="#" onsubmit="investCalc()">
+        <p>Enter your initial investment and select the interest rate you want back</p>
+        <input type="text" id="inInvestment">
+        <select id="rate">
+            <option value=".02">2%</option>
+            <option value=".03">3%</option>
+            <option value=".04">4%</option>
+            <option value=".05">5%</option>
+            <option value=".06">6%</option>
+            <option value=".07">7%</option>
+        </select>
+        <p>What is your additional amount for the investment term</p>
+        <input type="text" id="additional" value="0">
+        <p>How long is your investment term</p>
+        <input type="text" id="term">
+        <select id="termType">
+            <option value="months">months</option>
+            <option value="years">years</option>
+        </select>
+        <input type="submit" type="submit">
+    </form>
+    <br>
+    <span id="output"></span>
+    <script>
+        function investCalc() {
+            event.preventDefault();
+
+            var output = document.getElementById('output');
+            var inInvestment = parseInt(document.getElementById('inInvestment').value);
+            var additional = parseInt(document.getElementById('additional').value);
+            var rate = parseFloat(document.getElementById('rate').value);
+            var term = parseInt(document.getElementById('term').value);
+            var termType = document.getElementById('termType').value;
+
+            var interest = rate * inInvestment;
+            var totalBalance = interest + inInvestment;
+            var totalAmount = totalBalance + additional;
+
+            if (termType == "months") {
+                output.innerHTML = "Your total interest for the term is <span>" + interest.toFixed(2) + "</span> and your account balance is <span>" + totalAmount + "</span> .";
+            }
+            if (termType == "years") {
+                output.innerHTML = "Your total interest for the term is <span>" + interest.toFixed(2) + "</span> and your account balance is <span>" + totalAmount + "</span> .";
+            }
+        }
+    </script>
 </body>
 </html>
