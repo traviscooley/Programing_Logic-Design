@@ -157,21 +157,50 @@
                     var second = prompt('Does your pet have long ears? Yes/No');
                     
                     if (second.toLowerCase() == "yes") {
-                        final = "Rabbit"
+                        final = alert("Rabbit");
                     }
-                    else (second.toLowerCase() == "no") {
-                        final = "Hamster"
+                    else {
+                        final = alert("Hamster");
                     }
                 }
-                else (first.toLowerCase() == "no") {
+                else {
 
                     var second = prompt('Is your pet mans best friend? Yes/No');
 
-                    if (second = prompt(''))
-                };
-            };
-            else (mammal.toLowerCase() == "no") {
-                var first = prompt('')
+                    if (second.toLowerCase() == "yes") {
+                        final = alert("Dog");
+                    }
+                    else {
+                        final = alert("Cat");
+                    }
+                }
+            }
+            else {
+
+                var first = prompt('Does your pet have scales? Yes/No');
+
+                if (first.toLowerCase() == "yes") {
+                    
+                    var second = prompt('Does your pet eat rodents? Yes/No')
+
+                    if (second.toLowerCase() == "yes") {
+                        final = alert("Snake");
+                    }
+                    else {
+                        final = alert("Fish");
+                    }
+                }
+                else {
+                    
+                    var second = prompt('Does your pet have more than two legs? Yes/No')
+
+                    if (second.toLowerCase() == "yes") {
+                        final = alert("Spider");
+                    }
+                    else {
+                        final = alert("Parrot");
+                    }
+                }
             }
         }
     </script>
