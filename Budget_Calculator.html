@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Budgeting Calculator</title>
+    <style>
+        body {
+            font-size: 26px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Budgeting Calculator</h1>
+    <fieldset>
+        <legend>Income</legend>
+        <form action="#">
+            <p>What is your monthly income?</p>
+            <input type="text">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Housing Expenses (All Properties You Rent or Own)</legend>
+        <input type="radio" name="housingOption" value="rent">Rent
+        <input type="radio" name="housingOption" value="own" checked="checked">Own
+        <form action="#">
+            <p>Rent/Mortgage</p>
+            <input type="text">
+            <p>Insurance</p>
+            <input type="text">
+            <p>Electric</p>
+            <input type="text">
+            <p>Water</p>
+            <input type="text">
+            <p>Gas</p>
+            <input type="text">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Car Expenses</legend>
+        <form action="#">
+            <p>Monthly Payment</p>
+            <input type="text">
+            <p>Insurance</p>
+            <input type="text">
+            <p>Monthly Cost for Gas</p>
+            <input type="text">
+            <p>Registration, Fees, taxes and miscellaneous</p>
+            <input type="text">
+        </form>
+    </fieldset>
+    <script>
+        function checkIntField(a, b) {
+            var c = $("#" + a).val();
+            c = $.trim(c);
+            if (!/^[0-9]+$/.test(c)) {
+                alert(b + " must be a valid integer value.");
+                return false
+            }
+            return true
+        }
+
+        function validate() {
+            var b = $("input[name=housingoption]:checked").val();
+            if (b == "rent") {
+                var h = $("#monthly_rent").val();
+                h = $.trim(h);
+                if (h.length == 0) {
+                    alert("Please input the monthly rent.");
+                    return false
+                }
+                if (!/^[0-9]+$/.test(h)) {
+                    alert("Monthly rent must be a valid integer value.");
+                    return false
+                }
+            } else {
+                if (b == "own") {
+                    var a = $("#monthly_mortgage").val();
+                    a = $.trim(a);
+                    if (a.length == 0) {
+                        alert("Please input monthly_mortgage.");
+                        return false
+                    }
+                    if (a.length > 0 && !/^[0-9\.]+$/.test(a)) {
+                        alert("Invalid monthly_mortgage value.");
+                        return false
+                    }
+                    try {
+                        var f = parseFloat(a)
+                    } catch (i) {
+                        alert("Invalid monthly_mortgage value.");
+                        return false
+                    }
+                    var l = $("#propertytax").val();
+                    l = $.trim(l);
+                    if (l.length == 0) {
+                        alert("Please input monthly property tax.");
+                        return false
+                    }
+                    if (l.length > 0 && !/^[0-9\.]+$/.test(l)) {
+                        alert("Invalid property tax value.");
+                        return false
+                    }
+                    try {
+                        var n = parseFloat(l)
+                    } catch (i) {
+                        alert("Invalid property tax value.");
+                        return false
+                    }
+                    var m = $("#pmi").val();
+                    m = $.trim(m);
+                    if (m.length == 0) {
+                        alert("Please input monthly PMI payment.");
+                        return false
+                    }
+                    if (m.length > 0 && !/^[0-9\.]+$/.test(m)) {
+                        alert("Invalid PMI value.");
+                        return false
+                    }
+                    try {
+                        var d = parseFloat(m)
+                    } catch (i) {
+                        alert("Invalid PMI value.");
+                        return false
+                    }
+                    var k = $("#hoa").val();
+                    k = $.trim(k);
+                    if (k.length == 0) {
+                        alert("Please input the monthly HOA cost.");
+                        return false
+                    }
+                    if (!/^[0-9]+$/.test(k)) {
+                        alert("Monthly HOA cost must be a valid integer value.");
+                        return false
+                    }
+                    var c = $("#insurancecost").val();
+                    c = $.trim(c);
+                    if (c.length == 0) {
+                        alert("Please input the monthly insurance and maintenance cost.");
+                        return false
+                    }
+                    if (!/^[0-9]+$/.test(c)) {
+                        alert("Monthly insurance and maintenance cost must be a valid integer value.");
+                        return false
+                    }
+                }
+            }
+            if (checkIntField("auto_loan", "Auto loan payment") == false) {
+                return false
+            }
+            if (checkIntField("auto_insurance", "Auto insurance payment") == false) {
+                return false
+            }
+            if (checkIntField("fuel", "Fuel cost") == false) {
+                return false
+            }
+            if (checkIntField("carrepair", "Auto repair and maintenance cost") == false) {
+                return false
+            }
+            if (checkIntField("carotherfees", "Auto other fees") == false) {
+                return false
+            }
+            if (checkIntField("gas_electricity", "Gas & eletricity") == false) {
+                return false
+            }
+            if (checkIntField("alarm_system", "Alarm system") == false) {
+                return false
+            }
+            if (checkIntField("water", "Water, Sewer and Garbage") == false) {
+                return false
+            }
+            if (checkIntField("cellphone", "Cell Phone, Home Phone, Internet and TV") == false) {
+                return false
+            }
+            if (checkIntField("homedecor", "Home Decoration") == false) {
+                return false
+            }
+            if (checkIntField("housekeeping", "House Keeping & Cleansing") == false) {
+                return false
+            }
+            if (checkIntField("householdother", "HouseHold other cost") == false) {
+                return false
+            }
+            if (checkIntField("grocery", "Grocery cost") == false) {
+                return false
+            }
+            if (checkIntField("clothing", "Clothing cost") == false) {
+                return false
+            }
+            if (checkIntField("personalcare", "Personal care") == false) {
+                return false
+            }
+            if (checkIntField("medications", "Medications") == false) {
+                return false
+            }
+            if (checkIntField("lifeinsurance", "Life Insurance & Long-Term Care") == false) {
+                return false
+            }
+            if (checkIntField("childcare", "Child Care") == false) {
+                return false
+            }
+            if (checkIntField("childactivity", "Child Activities") == false) {
+                return false
+            }
+            if (checkIntField("petcare", "Pet Care") == false) {
+                return false
+            }
+            if (checkIntField("livingessentialother", "Living essentials other cost") == false) {
+                return false
+            }
+            if (checkIntField("diningout", "Dining Out") == false) {
+                return false
+            }
+            if (checkIntField("movies", "Movies / Theatre / Museum") == false) {
+                return false
+            }
+            if (checkIntField("fitness", "Fitness, Hobbies &amp; Collections Cost") == false) {
+                return false
+            }
+            if (checkIntField("vacation", "Vacation cost") == false) {
+                return false
+            }
+            if (checkIntField("gift", "Gift / Donation Cost") == false) {
+                return false
+            }
+            if (checkIntField("book", "Books, Magazines, Tuition & Classes") == false) {
+                return false
+            }
+            if (checkIntField("electronics", "Electronics") == false) {
+                return false
+            }
+            if (checkIntField("lifestyleother", "Life style other cost") == false) {
+                return false
+            }
+            var j = $("#income").val();
+            j = $.trim(j);
+            if (j.length == 0) {
+                alert("Please input your annual family gross income.");
+                return false
+            }
+            if (j.length > 0 && !/^[1-9][0-9]*$/.test(j)) {
+                alert("Annual family gross income must be a valid integer value.");
+                return false
+            }
+            var g = $("#incometaxrate").val();
+            g = $.trim(g);
+            if (g.length == 0) {
+                alert("Please input your income tax rate.");
+                return false
+            }
+            if (g.length > 0 && !/^[1-9][0-9]*$/.test(g)) {
+                alert("Income tax rate must be a valid integer value.");
+                return false
+            }
+            return true
+        }
+
+        function formsubmit() {
+            var a = validate();
+            if (!a) {
+                return
+            }
+            document.calcform.submit()
+        }
+        $(document).ready(function() {
+            $("input[name=housingoption]").change(function() {
+                var a = $("input[name=housingoption]:checked").val();
+                if (a == "rent") {
+                    $("#own").hide();
+                    $("#rent").show()
+                } else {
+                    if (a == "own") {
+                        $("#rent").hide();
+                        $("#own").show()
+                    }
+                }
+            })
+        });
+    </script>
+</body>
+</html>

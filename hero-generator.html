@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hero Generator</title>
+    <style>
+        #output {
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hero Generator</h1>
+    <ol>
+        <li>5 Names</li>
+        <li>5 Adjectives</li>
+        <li>5 Super Powers</li>
+        <li>EX:
+            The deadly accurate(adj) Germinator(name) [can kill all germs in the World](super power)
+            The courageous(adj) Man(name) [can win any bingo tournament](super power)
+            The playfull(adj) Dogo(name) [can eat all the homework](super power)
+            The astounding(adj) Unpaid Intern(name) [can file the cabnet](super power)
+            The mysterious(adj) Invisabo(name) [can be seen with cloths on](super power)
+        </li>
+        <li>var idx = Math.round(Math.random() * 4);</li>
+        <li>On an event (form onsubmit, body onload) generator a hero</li>
+    </ol>
+    <hr>
+    <form action="#" onsubmit="generateHero()">
+        <input type="submit" value="Click to start!">
+    </form>
+    <p>&nbsp;</p>
+    <div id="output"></div>
+    <script>
+        function generateHero() {
+            var hero = {
+                adjs: ['The deadly accurate','The courageous','The playful','The astounding','The mysterious'],
+                names: ['Germinator','Man','Dogo','Unpaid Intern','Invisabo'],
+                powers: ['can kill all germs in the World...aka Humans','can win any bingo tournament','can eat all the homework','can file the cabnet','can be seen with clothes']
+            }
+            var output = document.getElementById('output');
+            var name = prompt('Enter in a Hero name or press enter to continue, and get a random hero name and ability')
+
+            var nameOutput = (name != '') ? name : hero.names[generateRandom()];
+
+            output.textContent = hero.adjs[generateRandom()] + " " + nameOutput + " " + hero.powers[generateRandom()];
+
+            function generateRandom() {
+                return Math.round(Math.random() * 4);
+            }
+        }
+    </script>
+</body>
+</html>
