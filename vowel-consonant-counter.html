@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vowel-Consonant-Counter</title>
+    <style>
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vowel-Consonant-Counter</h1>
+    <ol>
+        <li>Start</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li>End</li>
+    </ol>
+    <hr>
+    <form action="#" onsubmit="vowelConsonantCounter()">
+        <label>Enter in a word or sentence and I will count the vowels</label>
+        <input type="text" id="str">
+        <input type="submit" value="submit">
+    </form>
+    <span id="output"></span>
+    <script>
+        function vowelConsonantCounter() {
+            var output = document.getElementById('output');
+            var str = document.getElementById('str').value.toLowerCase;
+
+            var vowel = 0;
+            var consonant = 0;
+            var space = 0;
+
+            for (var i = 0; i < str.length; i++) {
+                var newCon = " ";
+                if (str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u") {
+                    vowel++;
+                }
+                else {
+                    consonant++;
+                }
+            }
+            for (var j = 0; j < str.length; j++) {
+                if (str[j] === " ") {
+                    space++;
+                }
+            }
+            var consonant = consonant - space;
+            output.textContent = "Your word/sentence has" + vowel + "vowels and" + consonant + "consonants.";
+        }
+    </script>
+</body>
+</html>

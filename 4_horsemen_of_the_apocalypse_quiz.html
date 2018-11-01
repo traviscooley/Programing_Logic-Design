@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Four Horsemen Of The Apocalypse Quiz</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/horsemen_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Which Four Horsemen Of The Apocalypse are you?</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="#" onsubmit="horsemen()">
+                    <label>What weapon would you use?</label>
+                    <input type="radio" name="weapon" value="1" checked="checked"><span>Bow</span>
+                    <input type="radio" name="weapon" value="2"><span>Sword</span>
+                    <input type="radio" name="weapon" value="3"><span>Whip/Scales</span>
+                    <input type="radio" name="weapon" value="4"><span>Scythe</span>
+                    <label>What horse would you ride?</label>
+                    <input type="radio" name="horse" value="1" checked="checked"><span>White Horse</span>
+                    <input type="radio" name="horse" value="2"><span>Red Horse</span>
+                    <input type="radio" name="horse" value="3"><span>Black Horse</span>
+                    <input type="radio" name="horse" value="4"><span>Pale Horse</span>
+                    <label>What type of person are you?</label>
+                    <input type="radio" name="person" value="1" checked="checked"><span>Intelligent</span>
+                    <input type="radio" name="person" value="2"><span>Fierce</span>
+                    <input type="radio" name="person" value="3"><span>Protective</span>
+                    <input type="radio" name="person" value="4"><span>Loyal</span>
+                    <label>Which characteristic best describes you?</label>
+                    <input type="radio" name="character" value="1" checked="checked"><span>Empathetic</span>
+                    <input type="radio" name="character" value="2"><span>Strong</span>
+                    <input type="radio" name="character" value="3"><span>Motivated</span>
+                    <input type="radio" name="character" value="4"><span>Wise</span>
+                    <label>What would you name your horse?</label>
+                    <input type="radio" name="name" value="1" checked="checked"><span>Strife</span>
+                    <input type="radio" name="name" value="2"><span>Ruin</span>
+                    <input type="radio" name="name" value="3"><span>Fury</span>
+                    <input type="radio" name="name" value="4"><span>Despair</span>
+                    <br>
+                    <p>&nbsp;</p>
+                    <button type="submit" id="submitButton" class="btn btn-danger btn-lg">Submit</button>
+                    <div id="output"></div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        function horsemen() {
+            event.preventDefault();
+
+            var output = document.getElementById('output');
+            var answer1 = Number(document.querySelector('input[name="weapon"]:checked').value);
+            var answer2 = Number(document.querySelector('input[name="horse"]:checked').value);
+            var answer3 = Number(document.querySelector('input[name="person"]:checked').value);
+            var answer4 = Number(document.querySelector('input[name="character"]:checked').value);
+            var answer5 = Number(document.querySelector('input[name="name"]:checked').value);
+            
+            var final = answer1 + answer2 + answer3 + answer4 + answer5;
+            
+            if (final > 15) {
+                output.innerHTML = "You are Death";
+            } else if (final > 10) {
+                output.innerHTML = "You are Famine";
+            } else if (final > 5) {
+                output.innerHTML = "You are War";
+            } else if (final <= 5) {
+                output.innerHTML = "You are Pestilence";
+            }
+            var submit = document.getElementById('submitButton');
+            submit.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

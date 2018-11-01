@@ -1,0 +1,76 @@
+.horsemen {
+    background: url(../images/horsemen.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.war {
+    background: url(../images/war.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.death {
+    background: url(../images/death.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.fury {
+    background: url(../images/fury.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.strife {
+    background: url(../images/strife.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body {
+    text-align: center;
+}
+h1 {
+    margin: 20px 0 50px 0;
+}
+h2 {
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+    color: rgb(61, 0, 0);
+}
+.pick_char {
+    display: block;
+    font-size: 63px;
+    margin-bottom: 120px;
+    border-bottom: 2px solid rgb(46, 46, 46);
+}
+input[type='radio']:checked + span {
+    box-shadow: 0 0 10px 20px #ffaa00;
+}
+input[type='radio'] {
+    display: none;
+    height: 50px;
+    width: 50px;
+}
+span {
+    margin: 0 45px 0 5px;
+}
+button {
+    margin: 215px 100px 0 130px;
+}
+.story_background {
+    background-color: rgba(128, 128, 128, 0.623);
+    box-shadow: 0 0 10px 5px rgb(122, 0, 0);
+}
+p { 
+    padding: 0 100px;
+    margin: 50px 0 0 0;
+    font-size: 26px;
+    color: rgb(31, 0, 0);
+}
