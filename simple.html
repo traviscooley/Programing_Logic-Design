@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple JavaScript</title>
+</head>
+<body>
+    <h1 id="output">Hello</h1> <!-- join two strings that results in 'Hello World' -->
+    <h2 id="math">Math</h2> <!-- create a function called addition that takes two param and adds them togehter and change the word Math to the Number 10 -->
+    <h2 id="array">Name[2]</h2> <!-- make an Array with three(3) names and change 'Name[2] to the corresponding name in the array' -->
+    <script>
+        // Hello World
+        var output = document.getElementById('output');
+        var hello = 'Hello';
+        var world = 'World';
+        output.textContent = hello + world;
+
+        // Math
+        var math = document.getElementById('math');
+        var addition = 5 + 5;
+        math.textContent = addition;
+
+        // Array Name
+        var array = document.getElementById('array');
+        var names = [
+            'Travis',
+            'Doyle',
+            'Cooley'
+        ];
+        names[2] = 'Cooleyo'
+        array.innerHTML = names[2];
+    </script>
+</body>
+</html>

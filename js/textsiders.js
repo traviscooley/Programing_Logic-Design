@@ -85,12 +85,14 @@ function game1() {
             choice.innerHTML = "";
             stage = 'begin1';
         }
-
-
-
     } else if (stage == 2.2) {
         quest.innerHTML = '';
         choice.innerHTML = ``;
+
+
+
+
+        
     } else if (stage == 3) {
         quest.innerHTML = 'As you move forward<br> you find yourself in Vulgrim<br> where Sameal is sealed...<br>A Phantom General<br> which guards the seal<br> apears and blocks your path!<br>Do you fight the General or Ignore him?'
         choice.innerHTML = `
