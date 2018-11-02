@@ -1,33 +1,32 @@
 function play() {
-    event.preventDefault();
     var url = document.querySelector('input[name="url"]:checked').value;
     window.location = url;
 }
 var stage = 0;
+var audio = document.getElementById('audio');
+var quest = document.getElementById('quest');
+var choice = document.getElementById('choices');
+var story = document.getElementById('story');
 function game1() {
-    event.preventDefault();
-    var quest = document.getElementById('quest');
-    var choice = document.getElementById('choices');
-    var story = document.getElementById('story');
     // Stage 0
     if(stage == 0) {
         story.innerHTML = 'Quest'
         quest.innerHTML = 'You have fallen in the streets of New York City. While searching for the ones responsible for framing you. You find yourself in the middle of a battlefield of Hell on Earth with Angels and Demons fighting to the death for supremacy. Which side do you choose?';
         choice.innerHTML = 
         `<label>
-            <input type='radio' name='choice1' value='answer1' checked='checked'>
+            <input type='radio' name='choice' value='answer1' checked='checked'>
                 <span>
                     <img src='images/angels.png'>
                 </span>
         </label>
         <label>
-            <input type='radio' name='choice1' value='answer2'>
+            <input type='radio' name='choice' value='answer2'>
                 <span>
                     Ignore
                 </span>
         </label>
         <label>
-            <input type='radio' name='choice1' value='answer3'>
+            <input type='radio' name='choice' value='answer3'>
                 <span>
                     <img src='images/demons.png'>
                 </span>
@@ -38,7 +37,7 @@ function game1() {
         }
     // Stage 1
     } else if (stage == 1) {
-        var choices = document.querySelector('input[name="choice1"]:checked').value;
+        var choices = document.querySelector('input[name="choice"]:checked').value;
         // If Choices is Answer1
         if (choices == 'answer1') {
             quest.innerHTML = "<br>Even after you save the Angels.<br> They blame you for breaking the law and<br> will hunt you in the future<br><p>&nbsp;</p>";
@@ -62,20 +61,20 @@ function game1() {
         quest.innerHTML = 'As you move forward<br> you find yourself in Vulgrim<br> where Sameal is sealed...<br>A Phantom General<br> which guards the seal<br> apears and blocks your path!<br>Do you fight the General or Ignore him?';
         choice.innerHTML = `
         <label>
-            <input type='radio' name='choice2' value='answer1' checked='checked'>
+            <input type='radio' name='choice' value='answer1' checked='checked'>
                 <span>
                     <img src='images/fight1.png'>
                 </span>
         </label>
         <label>
-            <input type='radio' name='choice2' value='answer2'>
+            <input type='radio' name='choice' value='answer2'>
                 <span>
                     Ignore
                 </span>
         </label>`;
         stage = 2.1;
     } else if (stage == 2.1) {
-        var choices = document.querySelector('input[name="choice2"]:checked').value;
+        var choices = document.querySelector('input[name="choice"]:checked').value;
         if (choices == 'answer1') {
             quest.innerHTML = "<br>You have killed the Phantom General<br> And as his blood runs<br> The seal breaks<p>&nbsp;</p>";
             choice.innerHTML = "";
@@ -86,24 +85,45 @@ function game1() {
             stage = 'begin1';
         }
     } else if (stage == 2.2) {
-        quest.innerHTML = '';
-        choice.innerHTML = ``;
+        quest.innerHTML = 'Sameal has been released<br> from his imprisonment<br> and he offers you a deal.<br>help him regain his power or Die';
+        choice.innerHTML = `
+        <label>
+            <input type='radio' name='choice' value='answer1' checked='checked'>
+                <span>
+                    <img src='images/deal.png'>
+                </span>
+        </label>
+        <label>
+            <input type='radio' name='choice' value='answer2'>
+                <span>
+                    <img src='images/die.png'>
+                </span>
+        </label>`;
+        stage = 2.3;
+    } else if (stage == 2.3) {
+        var choices = document.querySelector('input[name="choice"]:checked').value;
+        if (choices == 'answer1') {
+            quest.innerHTML = "<br>Sameal tells you<br> to get the hearts<br> of the Chosen's<br> and bring them back<br> to him<p>&nbsp;</p>";
+            choice.innerHTML = "";
+            stage = 2.4;
+        } else if (choices == 'answer2') {
+            quest.innerHTML = `Sameal laughs<br> as y'all are both wounded<br> from the battle<br> and says he'll help you<br> in your search<br> only if you help him<br> get the hearts<p>&nbsp;</p>`;
+            choice.innerHTML = "";
+            stage = 'continue';
+        }
 
 
-
-
-        
     } else if (stage == 3) {
         quest.innerHTML = 'As you move forward<br> you find yourself in Vulgrim<br> where Sameal is sealed...<br>A Phantom General<br> which guards the seal<br> apears and blocks your path!<br>Do you fight the General or Ignore him?'
         choice.innerHTML = `
         <label>
-            <input type='radio' name='choice3' value='answer1' checked='checked'>
+            <input type='radio' name='choice' value='answer1' checked='checked'>
                 <span>
                     <img src='images/fight1.png'>
                 </span>
         </label>
         <label>
-            <input type='radio' name='choice3' value='answer2'>
+            <input type='radio' name='choice' value='answer2'>
                 <span>
                     Ignore
                 </span>
@@ -114,7 +134,6 @@ function game1() {
 
     // Stage 'begin'
     } else if (stage == 'begin') {
-        var audio = document.getElementById('audio');
         audio.play();
         alert(`Achievement Unlocked:
         
@@ -122,16 +141,25 @@ function game1() {
         stage = 'gameOver'
     // Stage 'begin1'
     } else if (stage == 'begin1') {
-        var audio = document.getElementById('audio');
         audio.play();
         alert(`Achievement Unlocked:
         
         Don't Run Away!`)
         stage = 'gameOver'
-    // Stage 'gameOver'
+    // Stage 'gameOver' 
     } else if (stage == 'gameOver') {
         window.location.href = 'textsiders_war.html';
+    // Stage 'continue'
+    } else if (stage == 'continue') {
+        audio.play();
+        alert(`Achievement Unlocked:
+        
+        Iron-Willed`)
+        stage = '';
+    } else if (stage == '2.4.1') {
+        quest.innerHTML = `Sameal laughs<br> as y'all are both wounded<br> from the battle and says he'll help you<br> in your search`
     }
+
 };
 function game2() {
     var quest = document.getElementById('quest');
