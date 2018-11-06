@@ -24,7 +24,9 @@
     <p>Blanditiis ut soluta ullam dolores saepe molestiae in impedit, vitae laborum ipsam voluptate corporis aspernatur.</p>
     <script>
         var num = document.getElementsByTagName('h2');
-        
+        for (var index = 0; index < num.length; index++) {
+            num[index].textContent = (index + 1) + '. ' + num[index].textContent;            
+        };
     </script>
 </body>
 </html>
