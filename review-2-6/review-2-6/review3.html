@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Review 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- output 'My name is YOUR NAME' by using a seperate var per word, but don't use a single join statement ie var bla = var1 + var2 + var3; -->
+    <h1 id="output"></h1>
+    <script>
+        //version1
+        var output = document.getElementById('output');
+        var strng1 = 'My';
+        var strng2 = 'name';
+        var strng3 = 'is';
+        var strng4 = 'Bryce';
+
+        var strng5 = strng1 + ' ' + strng2;
+        strng5 += ' ';
+        strng5 += strng3 + ' ' + strng4;
+
+        output.textContent = strng5;    
+    </script>
+</body>
+</html>

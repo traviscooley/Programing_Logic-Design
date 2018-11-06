@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- add your name to the h1 //result: 'My name is Bryce' -->
+    <h1 id="output"></h1>
+     <!-- create a function that performs multiplication that returns the results and output the result below //result: 10 -->
+    <form onsubmit="multiplication();">
+        <label>Pick two numbers and I'll multiply them together!</label><br>
+        <input type="number" id="num1">
+        <label>*</label>
+        <input type="number" id="num2">
+        <input type="submit" value="multiply">
+    </form>
+    <h2 id="math"></h2>
+    <!-- create an array with different types of pets and output your pet of choice //result: 'Dragon' -->
+    <h2 id="array">Choose your pet</h2>
+    <script>
+        // #1
+        var output = document.getElementById('output');
+        var my = 'My'; var name = ' name'; var is = ' is'; var first = ' Travis'; var last = ' Cooley';
+        var myName = my + name;
+        var myNameIs = myName + is;
+        var firstLast = first + last;
+        var myNameIsFirstLast = myNameIs + firstLast;
+        output.textContent = myNameIsFirstLast;
+        
+        // #2
+        
+        function multiplication(num1,num2) {
+            event.preventDefault();
+            var math = document.getElementById('math');
+            var num1 = Number(document.getElementById('num1').value);
+            var num2 = Number(document.getElementById('num2').value);
+            var multiply = num1 * num2;
+            math.textContent = multiply;
+        }
+
+        // #3
+        var pet = [
+            'dog',
+            'cat',
+            'dragon',
+            'unicorn',
+            'bicorn'
+        ];
+        var array = document.getElementById('array');
+        array.textContent = pet[3];
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Review</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- add your name to the h1 //result: 'My name is BLANK' -->
+    <h1 id="output">My name is</h1>
+     <!-- create a function that performs multiplication that returns the results and output the result below //result: 10 -->
+    <h2 id="math">Multiplication</h2>
+    <!-- create an array with different types of pets and output your pet of choice //result: 'Dragon' -->
+    <h2 id="array">Choose your pet</h2>
+    <script>
+        var output = document.getElementById('output');
+        //WORKS
+        //output.textContent = output.textContent + ' Bryce'; //My name is Bryce
+        output.textContent +=' Bryce'; //My name is Bryce
+
+        // output.style
+        // output.id
+        // output.className
+        // output.dataset
+
+        var math = document.getElementById('math');
+        function multiplication(num1, num2) {
+            return num1 * num2;
+        }
+        math.textContent = multiplication(2,5); //10
+
+        var array = document.getElementById('array');
+        var pets = [
+            'Dog',
+            'Cat',
+            'Goldfish',
+            'Dragon'
+        ];
+        array.textContent = pets[pets.length - 1]; //pets.length - 1 = 3
+    </script>
+</body>
+</html>

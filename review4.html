@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- get each .item and change the text contents to "hello world" and add a the class 'red' which in fact makes the color:red -->
+    <ul>
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Possimus, beatae quia!</li>
+        <li class="item">Libero, veritatis corporis?</li>
+        <li class="item">Eligendi, blanditiis quis.</li>
+        <li class="item">Cupiditate, iste enim?</li>
+    </ul>
+    <script>
+        var list = document.getElementsByClassName('item');
+        for (var idx = 0; idx < list.length; idx++) {
+            var element = list[idx];
+            element.classList.add('red');
+            element.textContent = 'Hello World';
+        }
+    </script>
+</body>
+</html>

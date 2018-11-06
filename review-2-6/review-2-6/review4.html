@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Review 4</title>
+    <style>
+        li {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <!-- loop through an heroesArray of Super heroes and output them as li's -->
+    <ul id="output">
+        
+    </ul>
+    <script>
+        var output = document.getElementById('output');
+        //Hero heroesArray
+        var heroesArray = [
+            'Batman',
+            'Superman',
+            'Flash'
+        ];
+
+        // WORKS
+        // for loop MDN
+        // for (var index = 0; index < heroesArray.length; index++) {
+        //     //output.innerHTML += '<li id="item'+(index + 1)+'">' + heroesArray[index] + '</li>';
+        //     output.innerHTML += '<li>' + heroesArray[index] + '</li>';
+        // }
+
+        // ALSO WORKS
+        // heroesArray.foreach loop MDN
+        heroesArray.forEach(function (element) {
+            // output.innerHTML += '<li id="item'+(index + 1)+'">' + element + '</li>';
+            output.innerHTML += '<li>' + element + '</li>';
+        });
+    </script>
+</body>
+</html>

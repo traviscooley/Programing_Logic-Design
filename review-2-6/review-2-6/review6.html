@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Review 6</title>
+    <style>
+    li {
+        font-size: 36px;
+    }</style>
+</head>
+<body>
+    <!-- create heroesObject -->
+    <!-- output your favorite hero from the heroesObject -->
+    <h1 id="output"></h1>
+    <!-- loop through a heroesObject of Super heroes and output them as li's -->
+    <ul id="list"></ul>
+    <script>
+        var heroes = {
+            hero1: "Superman",
+            hero2: "Batman",
+            hero3: "Flash"
+        }
+        var output = document.getElementById('output');
+        output.textContent = heroes.hero3; // DOT NOTATION
+        //output.textContent = heroes['hero2']; // BRACKET NOTATION
+
+        var list = document.getElementById('list');
+        for (var property in heroes) {
+            if (heroes[property] == 'Batman') {
+                heroes[property] = 'Batman is the Best!';
+            }
+            if (heroes.hasOwnProperty(property)) {
+                list.innerHTML += '<li>'+heroes[property]+'</li>';
+            }
+        }
+    </script>
+</body>
+</html>

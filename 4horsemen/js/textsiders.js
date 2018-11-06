@@ -111,9 +111,21 @@ function game1() {
             choice.innerHTML = "";
             stage = 'continue';
         }
-
-
-    } else if (stage == 3) {
+    } else if (stage == 2.4) {
+        quest.innerHTML = 'You set off to obtain the Chosen Ones hearts for Sameal. Tiamat was the first of the Chosen that you approached and was defeated. Soon the Greveir and Stygian would also know the same fate. You return to Sameal with hearts in hand and offer them to him in exchange for helping you. Sameal accepts you purposal for he knows and approves revenge when he see it.';
+        choice.innerHTML ='';
+        stage = 2.5;
+    } else if (stage == 2.5) {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    else if (stage == 3) {
         quest.innerHTML = 'As you move forward<br> you find yourself in Vulgrim<br> where Sameal is sealed...<br>A Phantom General<br> which guards the seal<br> apears and blocks your path!<br>Do you fight the General or Ignore him?'
         choice.innerHTML = `
         <label>
