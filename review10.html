@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="output"></ul>
+    <script>
+        var stateCapitals = [
+        'Montgomery',
+        'Juneau',
+        'Phoenix',
+        'Little Rock',
+        'Sacramento',
+        'Denver',
+        'Hartford',
+        'Dover',
+        'Tallahassee',
+        'Atlanta',
+        'Honolulu',
+        'Boise',
+        'Springfield',
+        'Indianapolis',
+        'Des Moines',
+        'Topeka',
+        'Frankfort',
+        'Baton Rouge',
+        'Augusta',
+        'Annapolis',
+        'Boston',
+        'Lansing',
+        'Saint Paul',
+        'Jackson',
+        'Jefferson City',
+        'Helena',
+        'Lincoln',
+        'Carson City',
+        'Concord',
+        'Trenton',
+        'Santa Fe',
+        'Albany',
+        'Raleigh',
+        'Bismarck',
+        'Columbus',
+        'Oklahoma City',
+        'Salem',
+        'Harrisburg',
+        'Providence',
+        'Columbia',
+        'Pierre',
+        'Nashville',
+        'Austin',
+        'Salt Lake City',
+        'Montpelier',
+        'Richmond',
+        'Olympia',
+        'Charleston',
+        'Madison',
+        'Cheyenne'
+        ];
+        var output = document.getElementById('output');
+        stateCapitals.forEach(function(capital, index) {
+            output.innerHTML += '<li>' + (index + 1) + '. ' + capital + '</li>' ;
+        });
+        // for (var index = 0; index < stateCapitals.length; index++) {
+        //     output.innerHTML += '<li>' + (index + 1) + '. ' + stateCapitals[index] + '</li>'
+        // }
+    </script>
+</body>
+</html>
