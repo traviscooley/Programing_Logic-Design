@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Review 9</title>
+</head>
+<body>
+    <h1>Multidimensional Objects</h1>
+    <!-- loop through a heroesObject of Super heroes and output their name as a parent li's and the powers as nested ul li -->
+    <!-- <li>
+            Aquaman
+            <ul>
+                <li>Communicate with fish</li>
+                <li>Swim good</li>
+            </ul>
+        </li> -->
+    <ul id="output">
+
+    </ul>
+    <script>
+        var heroesObject = {
+            hero1: {
+                name: "Superman",
+                powers: ["Strength", "Speed", "Heat Vision"]
+            },
+            hero2: {
+                name: "Batman",
+                powers: ["Money", "Trainning"]
+            },
+            hero3: {
+                name: "Flash",
+                powers: ["Speed"]
+            }
+        }
+        
+        var output = document.getElementById('output');
+        var htmlOutput = '';
+        for (var key in heroesObject) {
+                // Add the name
+                htmlOutput += '<li>'+heroesObject[key].name + '<ul>';
+
+                // Loop through the powers
+                var powers = heroesObject[key].powers;
+                powers.forEach(function(element){
+                    htmlOutput += '<li>' + element + '</li>';
+                });
+
+                // Close the html
+                htmlOutput += '</ul></li>';
+        }
+        output.innerHTML = htmlOutput;
+    </script>
+</body>
+</html>

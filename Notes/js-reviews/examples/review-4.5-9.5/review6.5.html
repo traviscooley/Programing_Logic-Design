@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Review 6 - Loop through an Object</title>
+    <style>
+    li {
+        font-size: 36px;
+    }</style>
+</head>
+<body>
+    <h1>Loop through an Object</h1>
+    <ul id="output">
+
+    </ul>
+    <script>
+        var obj = {
+            item: 'Bread',
+            item2: 'Milk',
+            item3: 'Ham',
+            item4: 'Cheese'
+        }
+
+        var output = document.getElementById('output');
+        for (var item in obj) {
+            if (obj.hasOwnProperty(item)) {
+                const value = obj[item];
+                output.innerHTML += '<li>'+ value + '</li>';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Review 10</title>
+</head>
+<body>
+    <h1>Multidimensional Arrays of Objects</h1>
+    <!-- loop through an array of objects of Super heroes and output their name as a parent li's and the powers as nested ul li -->
+    <!-- <li>
+            Aquaman
+            <ul>
+                <li>Communicate with fish</li>
+                <li>Swim good</li>
+            </ul>
+        </li> -->
+    <ul id="output">
+
+    </ul>
+    <script>
+        var heroesArray = [
+            { 
+                name: "Superman",
+                powers: ["Strength", "Speed", "Heat Vision"]
+            },
+            {
+                name: "Batman",
+                powers: ["Money", "Training"]
+            },
+            {
+                name: "Flash",
+                powers: ["Speed"]
+            }
+        ];
+        
+        var output = document.getElementById('output');
+        var htmlOutput = '';
+
+        heroesArray.forEach(function(element){
+            //START HTML OUTPUT
+            htmlOutput += '<li>' + element.name + '<ul>';
+            //LOOP FOR POWERS
+            element.powers.forEach(function(power){
+                htmlOutput += '<li>'+power+'</li>';
+            });
+            //CLOSE HTML OUTPUT
+            htmlOutput += '</ul></li>';
+        });
+
+        // heroesArray.forEach(function(object){
+        //     for (var key in object) {
+        //         var element = object[key];
+        //         if (typeof element == 'string') {
+        //             htmlOutput += '<li>' + element + '<ul>'; 
+        //         } else {
+        //             element.forEach(function (power) {
+        //                 htmlOutput += '<li>'+power+'</li>';
+        //             });
+        //         }
+        //     }
+        //     htmlOutput += '</ul></li>';
+        // });
+        output.innerHTML = htmlOutput;
+    </script>
+</body>
+</html>

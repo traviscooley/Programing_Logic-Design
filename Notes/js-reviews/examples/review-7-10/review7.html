@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Review 7</title>
+</head>
+<body>
+    <!-- ((h2>lorem3)+(p>lorem15))*6 -->
+    <!-- Use getElementsByTagName to add numbers before all the h2 headings //result: <h2>1. Lorem, ipsum dolor.</h2> -->
+    <h1>getElementsByTagName</h1>
+    <h2>Lorem, ipsum dolor.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, eaque sapiente commodi quisquam fuga architecto.</p>
+    <h2>Praesentium, ullam unde.</h2>
+    <p>Consectetur, ab vero minima quidem natus optio consequatur, eaque ratione iusto facere dolores! Ab, facere.</p>
+    <h2>Ducimus, voluptatibus labore.</h2>
+    <p>Dolore ipsum ipsa nihil, esse qui, fugiat sequi eum autem fugit debitis ea vero cumque!</p>
+    <h2>Quia, rem nobis.</h2>
+    <p>Ipsa, ad. Perspiciatis sunt architecto error amet aut modi maiores dignissimos quidem. Fuga, minus amet!</p>
+    <h2>Rerum, voluptatibus nesciunt!</h2>
+    <p>Est libero perferendis sequi natus numquam ut porro facilis doloremque, commodi sapiente quasi quia deleniti?</p>
+    <h2>Animi, repellat fuga!</h2>
+    <p>Odio, tempore obcaecati iusto officiis omnis quas quasi expedita eius vitae delectus facere unde non.</p>
+    <script>
+        var headings = document.getElementsByTagName('h2');
+
+        for (var index = 0; index < headings.length; index++) {
+            var element = headings[index];
+            element.textContent = (index + 1) + '. ' + element.textContent;
+            //headings[index].textContent = (index + 1) + '. ' + headings[index].textContent;
+        }
+    </script>
+</body>
+</html>

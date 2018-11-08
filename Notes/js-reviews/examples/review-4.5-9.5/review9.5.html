@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loop through stuff and make a page</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        var contentArray = [
+            {
+                id: 1,
+                title: "Hello world",
+                hero_image: "http://placehold.it/300x175",
+                images: [
+                    {
+                        alt: "Image here 1",
+                        url: "http://placehold.it/100x75"                        
+                    },
+                    {
+                        alt: "Image here 2",
+                        url: "http://placehold.it/100x75"                    
+                    }
+                ],
+                copy: "<h2>Heading 1</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloribus obcaecati fuga quibusdam error deleniti!</p><h2>Heading 2</h2><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos odit provident maiores, fuga nostrum ipsam? Quis velit ducimus soluta ipsum?</p>"
+            },
+            {
+                id: 2,
+                title: "Hello world 2",
+                hero_image: "http://placehold.it/300x175",
+                images: [
+                    {
+                        alt: "Image here 3",
+                        url: "http://placehold.it/100x75"                        
+                    },
+                    {
+                        alt: "Image here 4",
+                        url: "http://placehold.it/100x75"                    
+                    }
+                ],
+                copy: "<h2>Heading 3</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloribus obcaecati fuga quibusdam error deleniti!</p><h2>Heading 4</h2><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos odit provident maiores, fuga nostrum ipsam? Quis velit ducimus soluta ipsum?</p>"
+            },
+            {
+                id: 3,
+                title: "Hello world 3",
+                hero_image: "http://placehold.it/300x175",
+                images: [
+                    {
+                        alt: "Image here 5",
+                        url: "http://placehold.it/100x75"                        
+                    },
+                    {
+                        alt: "Image here 6",
+                        url: "http://placehold.it/100x75"                    
+                    }
+                ],
+                copy: "<h2>Heading 5</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloribus obcaecati fuga quibusdam error deleniti!</p><h2>Heading 6</h2><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos odit provident maiores, fuga nostrum ipsam? Quis velit ducimus soluta ipsum?</p>"
+            }
+        ];
+        var root = document.getElementById('root');
+        var htmlOutput = '';
+        contentArray.forEach(function(content){
+            //OPEN main div
+            htmlOutput += '<div id="item'+content.id+'">';
+            htmlOutput += '<h1>'+content.title+'</h1>';
+            //ADD hero img
+            htmlOutput += '<img src="'+content.hero_image+'" >';
+
+            //OPEN img container
+            htmlOutput += '<div class="imgs">';
+            //LOOP through the images array
+            content.images.forEach(function(image){
+                htmlOutput += '<img src="'+image.url+'" alt="'+image.alt+'" >';
+            });
+            //CLOSE img container
+            htmlOutput += '</div>';
+
+            htmlOutput += '<div class="copy">';
+            //ADD the copy
+            htmlOutput += content.copy;
+            htmlOutput += '</div>';
+
+            //CLOSE main div
+            htmlOutput += '</div>';
+        });
+        root.innerHTML = htmlOutput;
+    </script>
+</body>
+</html>

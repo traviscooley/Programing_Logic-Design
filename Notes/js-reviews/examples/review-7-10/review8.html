@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Review 8</title>
+</head>
+<body>
+    <h1>Multidimensional Objects</h1>
+    <!-- loop through a heroesObject of Super heroes and output their name and power as li's -->
+    <ul id="output">
+
+    </ul>
+    <script>
+        var heroesObject = {
+            hero1: {
+                name: "Superman",
+                power: "Super strength"
+            },
+            hero2: {
+                name: "Batman",
+                power: "Money"
+            },
+            hero3: {
+                name: "Flash",
+                power: "Speed"
+            }
+        }
+        
+        var output = document.getElementById('output');
+
+        for (var key in heroesObject) {
+            if (heroesObject.hasOwnProperty(key)) {
+            output.innerHTML += '<li>'+heroesObject[key]['name']+': '+heroesObject[key].power+'</li>';
+            }
+        }
+    </script>
+</body>
+</html>
