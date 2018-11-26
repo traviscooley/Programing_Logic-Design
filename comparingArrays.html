@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comparing Arrays</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        // write a function that compares two arrays to see if they are the same
+            // returns true or false
+            // no outside js functions
+            // [1,2,3] == [1,2,3] TRUE
+            // ['Hello', 'Bryce'] == ['Hello', 'Bryce'] TRUE
+            // [1,2] == [4,5,6] FALSE
+            // [2,1,3] == [4,6,5] FALSE
+            // ['Hello', 'World'] == ['Hola', 'Mundo'] FALSE
+        var output = document.getElementById('output');
+        // var ans = compareArrays([1,2,3],[1,2,3]);
+        var ans = compareObj(obj1, obj2);
+        output.textContent = ans;
+        var obj1 = {
+            ar1: [1,2,3],
+            ar2: [1,2,3],
+            ar3: [1,2,3],
+        }
+        var obj2 = {
+            ar1: [1,2,3],
+            ar2: [1,2,3],
+            ar3: [1,2,3],
+        }
+        function compareObj(obj1, obj2) {
+            if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+                return false;
+            };
+            if (!compareObj(Object.keys(obj1), Object.keys(obj2))) {
+                return false;
+            }
+            for (const ar in obj1) {
+                var ar1 = obj1[ar];
+                var ar2 = obj2[ar];
+                if (!compareArrays(ar1, ar2)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+        function compareArrays(array1, array2) {
+            if (array1.length !== array2.length) {
+                return false;
+            }
+            for (var i = 0; i < array1.length; i++) {
+                if (array1[i] !== array2[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
