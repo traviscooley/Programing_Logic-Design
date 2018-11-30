@@ -1,0 +1,33 @@
+html, body {
+    background-color: #32aec9;
+}
+.header {
+    padding: 0 625px;
+    margin-bottom: -45px;
+}
+h1 {
+    background-color: #aadff2;
+    border-radius: 50% 50% 0 0;
+    padding: 0 0 30px;
+    font-size: 52px;
+    color: #32aec9;
+    text-align: center;
+}
+.wrapper {
+    border-top: 20px solid #217282;
+    border-left: 10px solid #217282;
+    border-right: 10px solid #217282;
+    border-bottom: none;
+}
+.screen {
+    padding: 200px;
+    background-color: rgb(19, 18, 18);
+    border-top: 30px solid #2c8b9c;
+    border-right: 30px solid #257b8a;
+    border-left: 30px solid #257b8a;
+    border-bottom: 60px solid #c9d5d6;
+}
+.bottom {
+    border: 30px solid #bbc9c9;
+
+}
