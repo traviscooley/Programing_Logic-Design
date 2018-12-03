@@ -17,15 +17,49 @@ h1 {
     border-top: 20px solid #217282;
     border-left: 10px solid #217282;
     border-right: 10px solid #217282;
-    border-bottom: none;
 }
 .screen {
-    padding: 200px;
-    background-color: rgb(19, 18, 18);
+    
+    padding: 100px 100px 30px;
+    background-color: #c5cacc;
     border-top: 30px solid #2c8b9c;
     border-right: 30px solid #257b8a;
     border-left: 30px solid #257b8a;
     border-bottom: 60px solid #c9d5d6;
+}
+.inner-screen {
+    margin: -80px -1px 0 -80px;
+    padding: 20px 50px 10px 50px;
+    background-color: #a3afb5;
+    border-top: 30px solid #869b9e;
+    border-right: 20px solid #636b6e;
+    border-left: 20px solid #636b6e;
+}
+.display-screen {
+    padding: 200px 100px 100px;
+    background-color: #4072b8;
+    border: 3px solid #25438a;
+}
+.top {
+    margin-bottom: 150px;
+}
+.option {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    background-color: #c9d5d6;
+    border-radius: 5px;
+}
+.dispenser {
+    position: relative;
+    z-index: 1;
+    margin: 30px 225px 0 150px;;
+    padding: 1px;
+    background-color: #2c2a2a;
+    border-top: 5px solid #121212;
+    border-right: 5px solid #363636;
+    border-bottom: 5px solid #262626;
+    border-left: 5px solid #363636;
 }
 .bottom {
     border: 30px solid #bbc9c9;
