@@ -1,0 +1,164 @@
+html, body {
+    background-color: #32aec9;
+}
+.header {
+    padding: 0 625px;
+    margin-bottom: -45px;
+}
+h1 {
+    margin: 8px 0;
+    background-color: #aadff2;
+    box-shadow: 0 0 10px white;
+    border-radius: 50% 50% 0 0;
+    padding: 0 0 30px;
+    font-size: 52px;
+    color: #32aec9;
+    text-align: center;
+}
+.wrapper {
+    border-top: 20px solid #217282;
+    border-left: 10px solid #217282;
+    border-right: 10px solid #217282;
+}
+.screen {
+    padding: 100px 100px 30px;
+    background-color: #c5cacc;
+    border-top: 30px solid #2c8b9c;
+    border-right: 30px solid #257b8a;
+    border-left: 30px solid #257b8a;
+    border-bottom: 60px solid #c9d5d6;
+}
+.inner-screen {
+    margin: -80px -1px 0 -80px;
+    padding: 20px 50px 10px 50px;
+    background-color: #a3afb5;
+    border-top: 30px solid #869b9e;
+    border-right: 20px solid #636b6e;
+    border-left: 20px solid #636b6e;
+    border-bottom: 5px solid transparent;
+}
+.display-screen {
+    line-height: 40px;
+    height: 297px;
+    width: 425px;
+    background-color: #4072b8;
+    border: 3px solid #25438a;
+}
+.prompt {
+    margin-bottom: 75px;
+    text-align: center;
+}
+.input {
+    position: relative;
+    top: -25px;
+    left: 150px;
+    height: 25px;
+    width: 125px;
+    line-height: 25px;
+    border: 1px solid #000;
+}
+.leftChoice {
+    text-align: left;
+    padding-left: 5px;
+    font-size: 18px
+}
+.rightChoice {
+    text-align: right;
+    padding-right: 5px;
+    font-size: 18px;
+}
+.top {
+    margin-bottom: 150px;
+}
+.option {
+    padding: 10px;
+    margin-top: 18px;
+    margin-bottom: 5px;
+    background-color: #c9d5d6;
+    border-radius: 5px;
+}
+.dispenser {
+    position: relative;
+    z-index: 1;
+    margin: 30px 225px 0 150px;
+    padding: 1px;
+    background-color: #2c2a2a;
+    border-top: 5px solid #121212;
+    border-right: 5px solid #363636;
+    border-bottom: 5px solid #262626;
+    border-left: 5px solid #363636;
+}
+.pre-card {
+    margin-left: 140px;
+    margin-right: 65px;
+    border-radius: 50%;
+    height: 45px;
+    background-color: rgb(68, 68, 68);
+    border: 6px solid #575757;
+}
+.card {
+    position: relative;
+    z-index: 1;
+    margin-top: -32px;
+    margin-left: 80px;
+    padding: 1px;
+    background-color: #121212;
+    border-radius: 5px;
+    border: 9px solid #575757;
+    border-right-color: #869396;
+    border-left-color: #869396;
+}
+.pinpad {
+    height: 196px;
+    width: 194px;
+    margin-top: 65px;
+    margin-left: 75px;
+    background-color: #575757;
+    border-right: 2px solid rgb(68, 68, 68);
+    border-bottom: 2px solid rgb(68, 68, 68);
+    border-top: 2px solid rgb(182, 182, 182);
+    border-left: 2px solid rgb(182, 182, 182);
+}
+.key {
+    background-color: #c5c7c6;
+    margin: 5px 8px 0;
+    font-size: 20px;
+    width: calc(100%/3 - 19px);
+}
+.keyC {
+    width: 44px;
+    background-color: red;
+    line-height: 60px;
+    margin: 5px 8px 0;
+    font-size: 20px;
+}
+.key0 {
+    position: relative;
+    bottom: 20px;
+    right: -8px;
+    width: 46px;
+    line-height: 25px;
+    background-color: #c5c7c6;
+}
+.keyCH {
+    position: relative;
+    bottom: -15px;
+    right: 42px;
+    width: 46px;
+    line-height: 25px;
+    background-color: yellow;
+    margin-bottom: 3px;
+}
+.keyE {
+    position: relative;
+    top: -71px;
+    right: -128px;
+    width: 44px;
+    background-color: green;
+    line-height: 60px;
+    margin: 5px 8px 0;
+    font-size: 20px;
+}
+.bottom {
+    border: 30px solid #bbc9c9;
+}

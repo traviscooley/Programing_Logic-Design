@@ -4,243 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ATM Pseudocode</title>
+    <title>ATM</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            background: #ddd;
-            font-size: 21px;
-            padding: 0 0 60px;
-        }
-        .indent {
-            margin-left: 30px;
-            list-style-type: circle; 
-        }
-        .strike {
-            text-decoration: line-through;
-        }
-        .pass {
-            background: green;
-            color: #fff;
-        }
-        </style>
+    <link rel="stylesheet" href="css/atm.css">
+    
 </head>
 <body>
+    <div class="header">
+        <h1><img src="images/atm.png" alt=""></h1>
+    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="page-header">ATM</h1>
-            </div>
-            <div class="col-sm-6">
-                <h2>TODO</h2>
-                <ul>
-                    <li class="strike">test</li>
-                    <li class="strike">make a deposit</li>
-                    <li class="strike">checking/savings</li>
-                    <li class="strike">atm fees</li>
-                    <li class="strike">language -> assume always English</li>
-                    <li class="strike">reciepts</li>
-                    <li>check balance</li>
-                    <li>fast cash</li>
-                    <li>handle disabilities</li>
-                    <li>transfer funds</li>
-                    <li>change pin</li>
-                </ul>
-                <h2>VARIABLES</h2>
-                <ul>
-                    <li>SET card equal to zero</li>
-                    <li>SET pin equal to zero</li>
-                    <li>SET amount equal to zero</li>
-                    <li>SET balance equal to zero</li>
-                </ul>
-                <h2>LOGIC</h2>
-                <!--language-->
-                <h3>LANGUAGE</h3>
-                <ul>
-                    <li>DISPLAY languages to choose from</li>
-                    <li>English</li>
-                    <li>Inglés</li>
-                    <li>Anglais</li>
-                    <li>英語</li>
-                    <li>SET choosen language throughout process</li>
-                </ul>
-                <h3>ENTER CARD</h3>
-                <ul>
-                    <li>DISPLAY "Enter your card"</li>
-                    <li>INPUT card</li>
-                    <li>IF card is not ok</li>
-                    <li class="indent">DISPLAY "Card is invalid. Please try again."</li>
-                    <li class="indent">GOTO SCREEN ENTER CARD</li>
-                    <li>ELSE</li>
-                    <li class="indent">GOTO SCREEN PIN</li>
-                    <li>TODO: MOVE BELOW TO PROPER SCREENS</li>
-                    <li>DISPLAY "How much would you like to withdrawal?"</li>
-                    <li>INPUT amount</li>
-                    <li>SET balance equal to CALL checkBalance PASS card number, amount</li>
-                    <li>IF balance is true</li>
-                    <li class="indent">DISPLAY "Despensing funds. Have a nice day."</li>
-                    <li>ELSE</li>
-                    <li class="indent">DISPLAY "You have insufficient funds"</li>
-                </ul>
-                <h3>PIN</h3>
-                <ul>
-                    <li>DISPLAY "Enter your PIN code"</li>
-                    <li>INPUT pin</li>
-                    <li>IF pin is not ok</li>
-                    <li class="indent">DISPLAY "PIN is invalid. Please try again."</li>
-                    <li class="indent">GOTO PIN</li>
-                    <li>ELSE</li>
-                    <li class="indent">GOTO DASHBOARD</li>
-                </ul>
-                <h3>DASHBOARD</h3>
-                <ul>
-                    <li>...logic here...</li>
-                </ul>
-                <!--checking/savings-->
-                <h3>CHECKING/SAVING</h3>
-                <ul>
-                    <li>DISPLAY What account do you want to access</li>
-                    <li class="indent">Checking</li>
-                    <li class="indent">Savings</li>
-                    <li>SET accountType to choosen account</li>
-                    <li>DISPLAY would you like to withdrawal or deposit</li>
-                    <li>IF true(withdrawal) continue</li>
-                    <li class="indent"><a href="#withdrawal">GOTO withdraw</a> </li>
-                    <li>ELSE(deposit) continue</li>
-                    <li class="indent"><a href="#deposit">GOTO deposit</a></li>
-                </ul>
-                <!--deposit-->
-                <h3 id="deposit">DEPOSIT</h3>
-                <ul>
-                    <li>DISPLAY Do you want to deposit check or cash to your balance</li>
-                    <li>IF true(check) continue</li>
-                    <li class="indent">SET depositedAmount to balance</li>
-                    <li>ELSE(cash) continue</li>
-                    <li class="indent">SET depositedAmount to balance</li>
-                    <li>DISPLAY how much would you like to deposit</li>
-                    <li class="indent">INPUT amount</li>
-                    <li class="indent">ADD amount to balance</li>
-                    <li>DISPLAY added amount to balance with total amount</li>
-                </ul>
-                <!--withdrawal-->
-                <h3 id="withdrawal">WITHDRAWAL</h3>
-                <ul>
-                    <li>DISPLAY How much would you like to withdrawal from accountType</li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <!--atm fees-->
-                <h3>ATM FEES</h3>
-                <ul>
-                    <li>DISPLAY choice to use a bankCard or otherCard</li> 
-                    <li>IF true(bankCard) continue</li>
-                    <li>ELSE(otherCard) add fee for use</li>
-                    <li class="indent">DISPLAY atm fee with back & agree buttons</li>
-                    <li class="indent">IF true(agree) continue with the withdrawl</li>
-                    <li class="indent">ELSE(back) take back to dashboard</li>
-                </ul>
-                <!--reciepts-->
-                <h3>RECIEPTS</h3>
-                <ul>
-                    <li>DISPLAY choice to recieve a reciept</li>
-                    <li>IF true(yes) continue</li>
-                    <li class="indent">Print out reciept</li>
-                    <li>ELSE break</li>
-                </ul>
-                <!--check balance-->
-                <h3>CHECK BALANCE</h3>
-                <ul>
-                    <li>DISPLAY balance of accountType</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <!--fast cash-->
-                <h3>FAST CASH</h3>
-                <ul>
-                    <li>DISPLAY</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <!--handle disabilities-->
-                <h3>HANDLE DISABILITIES</h3>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <!--transfer funds-->
-                <h3>TRANSFER FUNDS</h3>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <!--change pin-->
-                <h3>CHANGE PIN</h3>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>       
-            </div>
-            <div class="col-sm-6">
-                <h2>MODULES</h2>
-                <h3>MODULE checkBalance ACCEPTS card number, amount</h3>
-                <ul>
-                    <li>SET balance equal to zero</li>
-                    <li>SET balance equal to CALL getUserAccount PASS card number</li>
-                    <li>IF balance is greater than amount</li>
-                    <li class="indent">RETURN true</li>
-                    <li>ELSE</li>
-                    <li class="indent">RETURN false</li>
-                </ul>
-                <h3>MODULE getUserAccount ACCEPTS card number</h3>
-                <ul>
-                    <li>SET balance equal to zero</li>
-                    <!-- we would talk to external servers, but we are not -->
-                    <li>LOOP users accounts</li>
-                    <li>IF user card number is equal to card number</li>
-                    <li class="indent">RETURN balance</li>
-                </ul>
-
-                <!-- testing -->
-                <h2>TESTING</h2>
-                <ul>
-                    <li class="pass">I try to use an invalid gas card in the ATM</li>
-                    <li>I try to use an invalid PIN code</li>
-                    <li>I try to withdrawal more money than I currently have from checking.</li>
-                    <li>I try to withdrawal more money than I currently have from savings.</li>
-                    <li>ETC...</li>
-                </ul>
+        <div class="wrapper">
+            <div class="screen">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="inner-screen">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <div class="top"></div>
+                                    <button class="option"></button>
+                                    <button class="option"></button>
+                                    <button class="option"></button>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="display-screen">
+                                        <h2 class="prompt">Choose language</h2>
+                                        <div class="input">
+                                            <div id="output"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p onclick="start()" class="leftChoice">English</p>
+                                                <p onclick="start()" class="leftChoice">Inglés</p>
+                                                <p onclick="start()" class="leftChoice">Anglais</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p onclick="start()" class="rightChoice">英語</p>
+                                                <p onclick="start()" class="rightChoice"></p>
+                                                <p onclick="start()" class="rightChoice"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1">
+                                    <div class="top"></div>
+                                    <button class="option"></button>
+                                    <button class="option"></button>
+                                    <button class="option"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dispenser"></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="pre-card"></div>
+                                <div class="card"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="pinpad">
+                                    <button onclick="punch(1)" class="key">1</button>
+                                    <button onclick="punch(2)" class="key">2</button>
+                                    <button onclick="punch(3)" class="key">3</button>
+                                    <button onclick="punch(4)" class="key">4</button>
+                                    <button onclick="punch(5)" class="key">5</button>
+                                    <button onclick="punch(6)" class="key">6</button>
+                                    <button onclick="punch(7)" class="key">7</button>
+                                    <button onclick="punch(8)" class="key">8</button>
+                                    <button onclick="punch(9)" class="key">9</button>
+                                    <button onclick="punch('x')" class="keyC">X</button>
+                                    <button onclick="punch(0)" class="key0">0</button>
+                                    <button onclick="punch('b')" class="keyCH">&lt;</button>
+                                    <button onclick="punch('e')" class="keyE">O</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="bottom"></div>
     </div>
-
-    <!-- 
-        Accept a card, 
-        take a pin code (assume always correct), 
-        ask how much they want, 
-        check balance 
-            if have enough 
-                dispense money 
-            else 
-                'You have insufficient funds'
-    -->
-    <!-- 
-        add in the ability to check if the card is valid or not
-        add in a check for the pin code if it is valid or not
-        set a new variable the recieve a CALL to checkBalance
-    -->
+    <script src="js/atm.js"></script>
 </body>
 </html>
