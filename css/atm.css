@@ -15,6 +15,9 @@ h1 {
     color: #32aec9;
     text-align: center;
 }
+p {
+    font-size: 18px
+}
 .wrapper {
     border-top: 20px solid #217282;
     border-left: 10px solid #217282;
@@ -45,32 +48,35 @@ h1 {
     border: 3px solid #25438a;
 }
 .prompt {
-    margin-bottom: 75px;
     text-align: center;
 }
 .input {
-    position: relative;
-    top: -25px;
-    left: 150px;
+    position: absolute;
+    top: 125px;
+    left: 165px;
     height: 25px;
     width: 125px;
+    text-align: center;
     line-height: 25px;
     border: 1px solid #000;
 }
 .leftChoice {
+    position: relative;
+    top: 90px;
     text-align: left;
     padding-left: 5px;
     font-size: 18px
 }
 .rightChoice {
+    position: relative;
+    top: 90px;
     text-align: right;
     padding-right: 5px;
     font-size: 18px;
 }
-.top {
-    margin-bottom: 150px;
-}
 .option {
+    position: relative;
+    top: 150px;
     padding: 10px;
     margin-top: 18px;
     margin-bottom: 5px;

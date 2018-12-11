@@ -21,36 +21,34 @@
                         <div class="inner-screen">
                             <div class="row">
                                 <div class="col-sm-1">
-                                    <div class="top"></div>
-                                    <button class="option"></button>
-                                    <button class="option"></button>
-                                    <button class="option"></button>
+                                    <button class="option" onclick="enterCardScreen()"></button>
+                                    <button class="option" onclick="enterCardScreen()"></button>
+                                    <button class="option" onclick="enterCardScreen()"></button>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="display-screen">
-                                        <h2 class="prompt">Choose language</h2>
-                                        <div class="input">
+                                        <h2 class="prompt" id="prompt">Choose language</h2>
+                                        <span id="target" class="">
                                             <div id="output"></div>
-                                        </div>
+                                        </span>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <p onclick="start()" class="leftChoice">English</p>
-                                                <p onclick="start()" class="leftChoice">Inglés</p>
-                                                <p onclick="start()" class="leftChoice">Anglais</p>
+                                                <p class="leftChoice choices" id="choices choice1">English</p>
+                                                <p class="leftChoice choices" id="choices choice2">Inglés</p>
+                                                <p class="leftChoice choices" id="choices choice3">Anglais</p>
                                             </div>
                                             <div class="col-sm-6">
-                                                <p onclick="start()" class="rightChoice">英語</p>
-                                                <p onclick="start()" class="rightChoice"></p>
-                                                <p onclick="start()" class="rightChoice"></p>
+                                                <p class="rightChoice choices" id="choices choice4">英語</p>
+                                                <p class="rightChoice choices" id="choices choice5"></p>
+                                                <p class="rightChoice choices" id="choices choice5"></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-1">
-                                    <div class="top"></div>
-                                    <button class="option"></button>
-                                    <button class="option"></button>
-                                    <button class="option"></button>
+                                    <button class="option" onclick="enterCardScreen()"></button>
+                                    <button class="option" onclick=""></button>
+                                    <button class="option" onclick=""></button>
                                 </div>
                             </div>
                         </div>
@@ -66,19 +64,19 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="pinpad">
-                                    <button onclick="punch(1)" class="key">1</button>
-                                    <button onclick="punch(2)" class="key">2</button>
-                                    <button onclick="punch(3)" class="key">3</button>
-                                    <button onclick="punch(4)" class="key">4</button>
-                                    <button onclick="punch(5)" class="key">5</button>
-                                    <button onclick="punch(6)" class="key">6</button>
-                                    <button onclick="punch(7)" class="key">7</button>
-                                    <button onclick="punch(8)" class="key">8</button>
-                                    <button onclick="punch(9)" class="key">9</button>
-                                    <button onclick="punch('x')" class="keyC">X</button>
-                                    <button onclick="punch(0)" class="key0">0</button>
-                                    <button onclick="punch('b')" class="keyCH">&lt;</button>
-                                    <button onclick="punch('e')" class="keyE">O</button>
+                                    <button id="1" onclick="" value='1' class="key">1</button>
+                                    <button id="2" onclick="" value='2' class="key">2</button>
+                                    <button id="3" onclick="" value='3' class="key">3</button>
+                                    <button id="4" onclick="" value='4' class="key">4</button>
+                                    <button id="5" onclick="" value='5' class="key">5</button>
+                                    <button id="6" onclick="" value='8' class="key">8</button>
+                                    <button id="7" onclick="" value='6' class="key">6</button>
+                                    <button id="8" onclick="" value='7' class="key">7</button>
+                                    <button id="9" onclick="" value='9' class="key">9</button>
+                                    <button onclick="" class="keyC">X</button>
+                                    <button id="0" onclick="" value='0' class="key0">0</button>
+                                    <button onclick=""class="keyCH">&lt;</button>
+                                    <button onclick=""class="keyE">O</button>
                                 </div>
                             </div>
                         </div>
