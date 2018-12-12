@@ -9,58 +9,6 @@ var User1 = {
         Savings: 600
     }
 };
-var User2 = {
-    firstName: 'John',
-    lastName: 'Doe',
-    pin: 4321,
-    card: 4321,
-    balance: {
-        Checking: 400,
-        Savings: 500
-    }
-};
-var users = [
-    {
-        firstName: 'Travis',
-        lastName: 'Cooley',
-        pin: 1111,
-        card: 1111,
-        balance: {
-            Checking: 400,
-            Savings: 500
-        }
-    },
-    {
-        firstName: 'Trevor',
-        lastName: 'Cooley',
-        pin: 1111,
-        card: 1111,
-        balance: {
-            Checking: 200,
-            Savings: 700
-        }
-    },
-    {
-        firstName: 'Mark',
-        lastName: 'Cooley',
-        pin: 2222,
-        card: 2222,
-        balance: {
-            Checking: 300,
-            Savings: 600
-        }
-    },
-    {
-        firstName: 'Lori',
-        lastName: 'Cooley',
-        pin: 3333,
-        card: 3333,
-        balance: {
-            Checking: 400,
-            Savings: 600
-        }
-    }
-];
 var prompt = document.getElementById('prompt');
 var choices = document.getElementById('choices');
 var choicesOver = document.getElementsByClassName('choices');
