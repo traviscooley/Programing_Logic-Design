@@ -1,4 +1,3 @@
-
 //Global Variables
 var User1 = {
     firstName: 'Travis',
@@ -9,23 +8,23 @@ var User1 = {
         Checking: 300,
         Savings: 600
     }
-}
+};
 var User2 = {
-    firstName: 'Trevor',
-    lastName: 'Cooley',
+    firstName: 'John',
+    lastName: 'Doe',
     pin: 4321,
     card: 4321,
     balance: {
         Checking: 400,
         Savings: 500
     }
-}
+};
 var users = [
     {
         firstName: 'Travis',
         lastName: 'Cooley',
-        pin: 1234,
-        card: 1234,
+        pin: 1111,
+        card: 1111,
         balance: {
             Checking: 400,
             Savings: 500
@@ -67,23 +66,23 @@ var choices = document.getElementById('choices');
 var choicesOver = document.getElementsByClassName('choices');
 var change = document.getElementsByTagName('button');
 var output = document.getElementById('output');
-var element = document.getElementById('target')
+var inputScreen = document.getElementById('inputScreen');
 var withdrawnAmount = 0;
 var depositAmount = 0;
 var stage = 0;
 
 //SignIn Account / Account Main Screen
 function enterCardScreen() {
-    element.classList.add('input');
     optionHidden();
-    prompt.innerText = 'Enter Card Number';
     choicesHidden();
     keypad();
+    prompt.innerText = 'Enter Card Number';
+    inputScreen.classList.add('input');
 };
 function enterPinScreen() {
     prompt.innerText = 'Enter PIN Number';
     output.innerText = '';
-}
+};
 function keypad(value) {
     padShow();
     if (value === 'b') {
@@ -121,50 +120,50 @@ function checkPin() {
         output.innerText = '';
     } else {
         stage = 2;
-        mainScreen()
+        mainScreen();
     }
 };
 function mainScreen() {
-    prompt.innerText = 'Welcome' + User1.firstName + ' ' + User1.lastName;
     padHidden();
     mainScreenOptions();
-    element.classList.remove("input");
+    prompt.innerText = 'Welcome: ' + User1.firstName + ' ' + User1.lastName;
+    inputScreen.classList.remove('input');
     output.innerText = '';
     choicesOver[0].innerText = 'Withdrawal';
-    choicesOver[1].innerText = 'Fast Cash'
-    choicesOver[3].innerText = 'Deposit';
-    choicesOver[5].innerText = 'Check Balance'
+    choicesOver[1].innerText = 'Deposit';
+    choicesOver[3].innerText = 'Check Balance';
+    choicesOver[4].innerText = 'Exit';
 };
 
 // Withdrawal
 function withdrawalScreen() {
-    choicesOver[0].innerText = 'Checking';
-    choicesOver[1].innerText = '';
-    choicesOver[3].innerText = 'Saving'
-    choicesOver[5].innerText = '';
     optionHidden();
+    choicesHidden();
     withdrawalScreenOptions();
+    prompt.innerText = 'Checking or Saving?';
+    choicesOver[0].innerText = 'Checking';
+    choicesOver[3].innerText = 'Saving';
 };
 function withdrawalChecking() {
-    prompt.innerText = 'Checking Balance:' + User1.balance.Checking
+    optionHidden();
+    withdrawalAmountOptions();
+    prompt.innerText = 'Checking Balance: ' + User1.balance.Checking;
     choicesOver[0].innerText = '$20';
     choicesOver[1].innerText = '$40';
     choicesOver[2].innerText = '$60';
     choicesOver[3].innerText = '$80';
     choicesOver[4].innerText = '$100';
-    optionHidden();
-    withdrawalAmountOptions();
     stage = 2;
 };
 function withdrawalSaving() {
-    prompt.innerText = 'Saving Balance:' + User1.balance.Savings
+    optionHidden();
+    withdrawalAmountOptions();
+    prompt.innerText = 'Saving Balance: ' + User1.balance.Savings;
     choicesOver[0].innerText = '$20';
     choicesOver[1].innerText = '$40';
     choicesOver[2].innerText = '$60';
     choicesOver[3].innerText = '$80';
     choicesOver[4].innerText = '$100';
-    optionHidden();
-    withdrawalAmountOptions();
     stage = 3;
 };
 function withdrawal20() {
@@ -196,6 +195,7 @@ function withdrawal60() {
         newWithdrawalCheckingBalance();
     } else if (stage === 3) {
         withdrawnAmount = 60;
+        User1.balance.Savings = User1.balance.Savings - 60;
         newWithdrawalSavingBalance();
     }
 };
@@ -224,49 +224,51 @@ function withdrawal100() {
 function newWithdrawalCheckingBalance() {
     optionHidden();
     choicesHidden();
-    prompt.innerHTML = '<h2>Checking Balance:' + User1.balance.Checking + '</h2><br>' + '<h2>Withdrawn Amount:' + withdrawnAmount + '</h2>'
     goOptions();
-    choicesOver[2].innerText = 'Continue';
-    choicesOver[5].innerText = 'Done';
+    prompt.innerHTML = '<h2>Checking Balance: ' + User1.balance.Checking + '</h2><br>' + '<h2>Withdrawn Amount: ' + withdrawnAmount + '</h2>';
+    choicesOver[2].innerText = 'Done';
+    choicesOver[5].innerText = 'Continue';
 };
 function newWithdrawalSavingBalance() {
     optionHidden();
     choicesHidden();
-    prompt.innerHTML = '<h2>Saving Balance:' + User1.balance.Savings + '</h2><br>' + '<h2>Withdrawn Amount:' + withdrawnAmount + '</h2>'
     goOptions();
-    choicesOver[2].innerText = 'Continue';
-    choicesOver[5].innerText = 'Done';
+    prompt.innerHTML = '<h2>Saving Balance: ' + User1.balance.Savings + '</h2><br>' + '<h2>Withdrawn Amount: ' + withdrawnAmount + '</h2>';
+    choicesOver[2].innerText = 'Done';
+    choicesOver[5].innerText = 'Continue';
 };
 
 // Deposit
 function depositScreen() {
-    choicesOver[0].innerText = 'Checking';
-    choicesOver[1].innerText = '';
-    choicesOver[3].innerText = 'Saving'
-    choicesOver[5].innerText = '';
     optionHidden();
+    choicesHidden();
     depositScreenOptions();
+    prompt.innerText = 'Checking or Saving?';
+    choicesOver[0].innerText = 'Checking';
+    choicesOver[3].innerText = 'Saving';
 };
 function depositChecking() {
-    prompt.innerText = 'Checking Balance:' + User1.balance.Checking
+    optionHidden();
+    choicesHidden();
+    depositAmountOptions();
+    prompt.innerText = 'Checking Balance: ' + User1.balance.Checking;
     choicesOver[0].innerText = '$20';
     choicesOver[1].innerText = '$40';
     choicesOver[2].innerText = '$60';
     choicesOver[3].innerText = '$80';
     choicesOver[4].innerText = '$100';
-    optionHidden();
-    depositAmountOptions();
     stage = 2;
 };
 function depositSaving() {
-    prompt.innerText = 'Saving Balance:' + User1.balance.Savings
+    optionHidden();
+    choicesHidden();
+    depositAmountOptions();
+    prompt.innerText = 'Saving Balance: ' + User1.balance.Savings;
     choicesOver[0].innerText = '$20';
     choicesOver[1].innerText = '$40';
     choicesOver[2].innerText = '$60';
     choicesOver[3].innerText = '$80';
     choicesOver[4].innerText = '$100';
-    optionHidden();
-    depositAmountOptions();
     stage = 3;
 };
 function deposit20() {
@@ -327,34 +329,36 @@ function deposit100() {
 function newDepositCheckingBalance() {
     optionHidden();
     choicesHidden();
-    prompt.innerHTML = '<h2>Checking Balance:' + User1.balance.Checking + '</h2><br>' + '<h2>Deposited Amount:' + depositAmount + '</h2>'
     goOptions();
-    choicesOver[2].innerText = 'Continue';
-    choicesOver[5].innerText = 'Done';
+    prompt.innerHTML = '<h2>Checking Balance: ' + User1.balance.Checking + '</h2><br>' + '<h2>Deposited Amount: ' + depositAmount + '</h2>';
+    choicesOver[2].innerText = 'Done';
+    choicesOver[5].innerText = 'Continue';
 };
 function newDepositSavingBalance() {
     optionHidden();
     choicesHidden();
-    prompt.innerHTML = '<h2>Saving Balance:' + User1.balance.Savings + '</h2><br>' + '<h2>Deposited Amount:' + depositAmount + '</h2>'
     goOptions();
-    choicesOver[2].innerText = 'Continue';
-    choicesOver[5].innerText = 'Done';
+    prompt.innerHTML = '<h2>Saving Balance: ' + User1.balance.Savings + '</h2><br>' + '<h2>Deposited Amount: ' + depositAmount + '</h2>';
+    choicesOver[2].innerText = 'Done';
+    choicesOver[5].innerText = 'Continue';
 };
 
 // Check Balance
 function checkBalanceScreen() {
-    prompt.innerHTML = '<h2>Account Balance:</h2><p>First Name:' + User1.firstName + '</p><p>Last Name:' + User1.lastName + '</p><p>Card Number:' + User1.card + '</p><p>PIN:' + User1.pin + '</p><p><strong>Checking:' + User1.balance.Checking + '</p><p>Savings:' + User1.balance.Savings + '</strong></p>';
+    optionHidden();
     choicesHidden();
+    goOptions();
+    prompt.innerHTML = '<h2>Account Balance</h2><br><p><strong>Checking: ' + User1.balance.Checking + '</p><p>Savings: ' + User1.balance.Savings + '</strong></p>';
+    choicesOver[0].innerText = 'Continue';
+    choicesOver[3].innerText = 'Done';
 };
 
-//Setting Attributes to a(n) onClick event and Display/Display Hidden for Options/Choices
+//Setting Attributes to a(n) onClick event, and Display/Display Hidden for Options/Choices
 function mainScreenOptions() {
     change[0].setAttribute('onClick', 'withdrawalScreen()');
-    change[1].setAttribute('onClick', 'fastCashScreen()');
-    change[2].setAttribute('onClick', '');
-    change[3].setAttribute('onClick', 'depositScreen()');
-    change[4].setAttribute('onClick', 'checkBalanceScreen()');
-    change[5].setAttribute('onClick', '');
+    change[1].setAttribute('onClick', 'depositScreen()');
+    change[3].setAttribute('onClick', 'checkBalanceScreen()');
+    change[4].setAttribute('onClick', 'SignOut()');
 };
 function withdrawalScreenOptions() {
     change[0].setAttribute('onClick', 'withdrawalChecking()');
@@ -379,8 +383,8 @@ function depositAmountOptions() {
     change[4].setAttribute('onClick', 'deposit100()');
 };
 function goOptions() {
-    change[2].setAttribute('onClick', 'goBack()');
-    change[5].setAttribute('onClick', 'SignOut()');
+    change[2].setAttribute('onClick', 'SignOut()');
+    change[5].setAttribute('onClick', 'goBack()');
 };
 function optionHidden() {
     change[0].setAttribute('onClick', '');
@@ -426,10 +430,11 @@ function choicesHidden() {
     }
 };
 
-//Go Back/Sign Out 
+//Go Back/Sign Out
 function goBack() {
+    optionHidden();
+    choicesHidden();
     mainScreen();
-    choicesOver[2].innerText = '';
 };
 function SignOut() {
     window.location.href = 'atm.html';
