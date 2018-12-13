@@ -68,12 +68,12 @@ function checkPin() {
         output.innerText = '';
     } else {
         stage = 2;
-        mainScreen();
+        dashboard();
     }
 };
-function mainScreen() {
+function dashboard() {
     padHidden();
-    mainScreenOptions();
+    dashboardOptions();
     prompt.innerText = 'Welcome: ' + User1.firstName + ' ' + User1.lastName;
     inputScreen.classList.remove('input');
     output.innerText = '';
@@ -297,12 +297,12 @@ function checkBalanceScreen() {
     choicesHidden();
     goOptions();
     prompt.innerHTML = '<h2>Account Balance</h2><br><p><strong>Checking: ' + User1.balance.Checking + '</p><p>Savings: ' + User1.balance.Savings + '</strong></p>';
-    choicesOver[0].innerText = 'Continue';
-    choicesOver[3].innerText = 'Done';
+    choicesOver[0].innerText = 'Done';
+    choicesOver[3].innerText = 'Continue';
 };
 
 //Setting Attributes to a(n) onClick event, and Display/Display Hidden for Options/Choices
-function mainScreenOptions() {
+function dashboardOptions() {
     change[0].setAttribute('onClick', 'withdrawalScreen()');
     change[1].setAttribute('onClick', 'depositScreen()');
     change[3].setAttribute('onClick', 'checkBalanceScreen()');
@@ -382,7 +382,7 @@ function choicesHidden() {
 function goBack() {
     optionHidden();
     choicesHidden();
-    mainScreen();
+    dashboard();
 };
 function SignOut() {
     window.location.href = 'atm.html';

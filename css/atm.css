@@ -1,12 +1,16 @@
 html, body {
-    background-color: #32aec9;
+    background: #34ADCC;
+}
+.pseudoBody {
+    background: url(../images/atmBackground.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 .header {
     padding: 0 625px;
     margin-bottom: -45px;
 }
-h1 {
-    margin: 8px 0;
+.header-img {
+    margin: 15px 0;
     background-color: #aadff2;
     box-shadow: 0 0 10px white;
     border-radius: 50% 50% 0 0;
