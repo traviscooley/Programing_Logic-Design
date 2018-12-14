@@ -1,9 +1,11 @@
 html, body {
-    background: #34ADCC;
+    background: url(../images/atmBackgroundtile30.jpg) center center fixed;
+    background-size: 20%;
 }
 .pseudoBody {
-    background: url(../images/atmBackground.jpg) no-repeat center center fixed;
+    background: url(../images/atmPseudoBackground.jpg) no-repeat center center fixed;
     background-size: cover;
+    font-size: 21px;
 }
 .header {
     padding: 0 625px;
